@@ -1,0 +1,18 @@
+<h2>Registracija</h2>
+<form (ngSubmit)="register()" #registrationForm="ngForm">
+  <input
+    type="text"
+    [(ngModel)]="username"
+    name="username"
+    placeholder="Unesite vaše korisničko ime"
+    required
+  />
+  <input
+    type="password"
+    [(ngModel)]="password"
+    name="password"
+    placeholder="Lozinka"
+    required
+  />
+  <button type="submit" [disabled]="!registrationForm.valid">Registruj se</button>
+</form>

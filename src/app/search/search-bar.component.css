@@ -1,0 +1,15 @@
+
+/*Podesavanje search-bara*/
+.search-bar {
+
+    /* Unutrašnji razmak unutar inputa */
+    padding: 8px; 
+    /* Bez okvira */
+    border: none; 
+    /* Zaobljeni uglovi */
+    border-radius: 6px; 
+    margin: 30px  570px;
+    
+  
+  }
+  

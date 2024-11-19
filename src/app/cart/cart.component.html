@@ -1,0 +1,7 @@
+<div *ngFor="let movie of reservedMovies" class="movie-card">
+  <img [src]="movie.imageUrl" alt="{{ movie.title }}" class="movie-image">
+  <h2>{{ movie.title }}</h2>
+  <h3>{{ movie.genre }}</h3>
+  <p>{{ movie.description }}</p>
+  <button (click)="removeMovie(movie.id)">Poništi rezervaciju</button>
+</div>

@@ -1,0 +1,33 @@
+.movie-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  color: white;
+  background-color: #121212;
+  text-align: center;
+}
+
+.movie-detail-container img {
+  width: 300px; /* Fiksna širina */
+  height: 450px; /* Fiksna visina */
+  object-fit: cover; /* Prilagodite sadržaj */
+  border-radius: 8px; /* Zaobljeni uglovi */
+  margin-bottom: 20px; /* Razmak ispod slike */
+}
+
+.movie-detail-container h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.movie-detail-container p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.movie-detail-container button {
+  margin-bottom: 20px;
+}

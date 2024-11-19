@@ -1,0 +1,15 @@
+<div class="movie-detail-container">
+  <h2>{{ movie.title }}</h2> 
+  <img [src]="movie.imageUrl" alt="{{ movie.title }}" /> 
+  <p>{{ movie.description }}</p> 
+  
+  <button (click)="toggleAbout()">{{ showAbout ? 'Sakrij O filmu' : 'Prikaži O filmu' }}</button> 
+  
+ 
+  <div *ngIf="showAbout">
+    <h3>O filmu</h3>
+    <p>{{ movie.about }}</p> 
+  </div>
+
+  <button (click)="reserveMovie(movie.id)">Rezerviši</button>
+</div>
