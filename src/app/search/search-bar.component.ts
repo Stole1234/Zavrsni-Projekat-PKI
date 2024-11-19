@@ -6,16 +6,20 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent {
-  searchCriteria: string = ''; // Kriterijum pretrage
+  searchCriteria = {
+    title: '',
+     genre: '',
+    releaseYear: ''
+  } // Kriterijum pretrage
 
-  @Output() search: EventEmitter<string> = new EventEmitter<string>();
+ 
+  @Output() search: EventEmitter<any> = new EventEmitter<any>();
 
   onSearch(): void {
     console.log('Search triggered with:', this.searchCriteria);
-    if (this.searchCriteria.trim() !== '') { // Proveri da li je unos validan
-      this.search.emit(this.searchCriteria); // Emituj unos
+    this.search.emit(this.searchCriteria);
     }
   }
 
-}
+
 

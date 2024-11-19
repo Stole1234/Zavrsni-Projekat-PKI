@@ -14,6 +14,7 @@ export class MovieListComponent implements OnInit {
   movies: any[] = [];  
   searchTerm: string = ''; 
   reservedMovies: any[] = []; 
+  filteredMovies: any[] = [];
 
   constructor(
     private movieService: MovieService,
@@ -28,16 +29,19 @@ export class MovieListComponent implements OnInit {
 
   loadMovies() {
     this.movies = this.movieService.getMovies();
+    this.filteredMovies = this.movies;
   }
 
-  searchMovies(searchTerm: string) {
-    console.log('Search term received:', searchTerm); 
-    if (searchTerm.trim() !== '') {
-      this.movies = this.movieService.searchMovies(searchTerm); // Pretraži filmove
-    } else {
-      this.loadMovies(); // Ako je prazan unos, učitaj sve filmove
-    }
+  searchMovies(criteria: any) {
+    this.filteredMovies = this.movies.filter(movie => {
+      return (
+        (!criteria.title || movie.title.toLowerCase().includes(criteria.title.toLowerCase())) &&
+        (!criteria.genre || movie.genre === criteria.genre) &&
+        (!criteria.releaseYear || movie.releaseDate.startsWith(criteria.releaseYear))
+      );
+    });
   }
+
   
   addMovieToCart(movie: any) {
     if (this.authService.isLoggedIn()) {  // Proverite da li je korisnik logovan
