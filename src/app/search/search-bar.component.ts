@@ -6,16 +6,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent {
-  // Promenljiva za unos pretrage
-  searchCriteria: string = '';
+  searchCriteria: string = ''; // Kriterijum pretrage
 
-  // Događaj koji emituje kriterijum pretrage
   @Output() search: EventEmitter<string> = new EventEmitter<string>();
 
-  // Funkcija koja se poziva pri pretrazi
   onSearch(): void {
-    if (this.searchCriteria.trim()) { // Provera da li je polje prazno
-      this.search.emit(this.searchCriteria);
-  }
+    if (this.searchCriteria.trim() !== '') { // Proveri da li je unos validan
+      this.search.emit(this.searchCriteria); // Emituj unos
+    }
   }
 }

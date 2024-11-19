@@ -30,9 +30,12 @@ export class MovieListComponent implements OnInit {
     this.movies = this.movieService.getMovies();
   }
 
-  searchMovies() {
-    this.movies = this.movieService.searchMovies(this.searchTerm);
+  searchMovies(searchTerm: string) {
+    this.movies = this.movieService.searchMovies(searchTerm);
   }
+  
+
+  
   addMovieToCart(movie: any) {
     if (this.authService.isLoggedIn()) {  // Proverite da li je korisnik logovan
       let reservedMovies = JSON.parse(localStorage.getItem('reservedMovies') || '[]');
