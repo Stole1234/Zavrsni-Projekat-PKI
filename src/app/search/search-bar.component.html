@@ -1,10 +1,8 @@
-
-<div>
+<div class="search-bar">
   <input 
     type="text" 
-    class="search-bar" 
     [(ngModel)]="searchCriteria" 
-    placeholder="Pretraži filmove..." 
+    placeholder="Pretraži filmove..."
+    (keydown.enter)="onSearch()"
   />
-  <button (click)="onSearch()">Pretraži</button>
 </div>

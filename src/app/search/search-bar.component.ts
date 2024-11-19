@@ -14,6 +14,8 @@ export class SearchBarComponent {
 
   // Funkcija koja se poziva pri pretrazi
   onSearch(): void {
-    this.search.emit(this.searchCriteria);
+    if (this.searchCriteria.trim()) { // Provera da li je polje prazno
+      this.search.emit(this.searchCriteria);
+  }
   }
 }
