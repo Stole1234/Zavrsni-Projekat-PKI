@@ -11,8 +11,11 @@ export class SearchBarComponent {
   @Output() search: EventEmitter<string> = new EventEmitter<string>();
 
   onSearch(): void {
+    console.log('Search triggered with:', this.searchCriteria);
     if (this.searchCriteria.trim() !== '') { // Proveri da li je unos validan
       this.search.emit(this.searchCriteria); // Emituj unos
     }
   }
+
 }
+

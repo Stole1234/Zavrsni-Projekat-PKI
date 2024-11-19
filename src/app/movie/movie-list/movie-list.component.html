@@ -1,6 +1,8 @@
 
 
 <div class="movie-list-container">
+  <app-search-bar (search)="searchMovies($event)"></app-search-bar>
+
   <mat-card *ngFor="let movie of movies" class="movie-card" (click)="viewDetails(movie.id)">
     <img mat-card-image [src]="movie.imageUrl" alt="{{ movie.title }}">
     
@@ -13,7 +15,8 @@
       <p>{{ movie.description }}</p>
     </mat-card-content>
   </mat-card>
+  
+
 </div>
 
 
-<app-search-bar (search)="searchMovies($event)"></app-search-bar>

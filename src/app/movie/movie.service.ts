@@ -86,11 +86,12 @@ export class MovieService {
   getMovieById(id: number) {
     return this.movies.find(movie => movie.id === id);
   }
+  
   searchMovies(term: string): any[] {
-    if (!term) return this.getMovies(); 
     return this.getMovies().filter(movie =>
       movie.title.toLowerCase().includes(term.toLowerCase())
     );
   }
+  
   
 }

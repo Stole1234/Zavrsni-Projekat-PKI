@@ -31,10 +31,13 @@ export class MovieListComponent implements OnInit {
   }
 
   searchMovies(searchTerm: string) {
-    this.movies = this.movieService.searchMovies(searchTerm);
+    console.log('Search term received:', searchTerm); 
+    if (searchTerm.trim() !== '') {
+      this.movies = this.movieService.searchMovies(searchTerm); // Pretraži filmove
+    } else {
+      this.loadMovies(); // Ako je prazan unos, učitaj sve filmove
+    }
   }
-  
-
   
   addMovieToCart(movie: any) {
     if (this.authService.isLoggedIn()) {  // Proverite da li je korisnik logovan

@@ -24,7 +24,7 @@ import { SearchBarComponent } from './search/search-bar.component';
     AboutComponent,
     RegisterComponent,
     LoginComponent,
-    SearchBarComponent
+    SearchBarComponent,
    
   ],
   imports: [
@@ -34,7 +34,7 @@ import { SearchBarComponent } from './search/search-bar.component';
     MatCardModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    CartModule 
+    CartModule ,
   ],
   providers: [],
   bootstrap: [AppComponent]
