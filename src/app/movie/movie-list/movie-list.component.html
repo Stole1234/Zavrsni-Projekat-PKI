@@ -1,6 +1,4 @@
-<div>
-  <input type="text" class="search-bar" [(ngModel)]="searchTerm" (input)="searchMovies()" placeholder="Pretraži filmove...">
-</div>
+
 
 <div class="movie-list-container">
   <mat-card *ngFor="let movie of movies" class="movie-card" (click)="viewDetails(movie.id)">

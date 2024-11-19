@@ -1,5 +1,7 @@
+
 <nav>
   <ul>
+    
     <li><a routerLink="/movies" routerLinkActive="active">Filmovi</a></li>
     <li *ngIf="!authService.isLoggedIn()"><a routerLink="/login" routerLinkActive="active">Log in</a></li>
     <li *ngIf="!authService.isLoggedIn()"><a routerLink="/register" routerLinkActive="active">Sign up</a></li>
@@ -9,7 +11,8 @@
     <li *ngIf="authService.isLoggedIn()">
       <a href="#" (click)="logout()">Odjavi se</a>
     </li>
-  </ul>
+  </ul> 
 </nav>
+<app-search-bar></app-search-bar>
 
 <router-outlet></router-outlet>
