@@ -1,33 +1,54 @@
+/* Glavni kontejner za detalje o filmu */
 .movie-detail-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 20px;
-  color: white;
-  background-color: #121212;
   text-align: center;
+  padding: 20px;
+  background-color: #121212;
+  color: white;
+  min-height: 100vh;
 }
 
+/* Stil za slike */
 .movie-detail-container img {
-  width: 300px; /* Fiksna širina */
-  height: 450px; /* Fiksna visina */
-  object-fit: cover; /* Prilagodite sadržaj */
-  border-radius: 8px; /* Zaobljeni uglovi */
-  margin-bottom: 20px; /* Razmak ispod slike */
+  max-width: 300px;
+  border-radius: 8px;
+  margin: 20px 0;
 }
 
-.movie-detail-container h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
+/* Kontejner za projekcije */
+.projections-container {
+  display: flex;
+  flex-wrap: wrap; /* Omogućava prelazak u novi red */
+  gap: 20px; /* Razmak između projekcija */
+  justify-content: center; /* Centriranje elemenata */
+  margin-top: 20px;
 }
 
-.movie-detail-container p {
-  font-size: 18px;
-  margin-bottom: 20px;
+/* Stil za pojedinačne kartice projekcija */
+.projection-card {
+  background-color: #1e1e1e;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  color: white;
+  width: 200px; /* Fiksna širina za svaku karticu */
+  text-align: left;
 }
 
-.movie-detail-container button {
-  margin-bottom: 20px;
+/* Stil za dugme "Rezerviši" */
+.projection-card button {
+  background-color: #4d4542;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.projection-card button:hover {
+  background-color: #756d6b;
 }

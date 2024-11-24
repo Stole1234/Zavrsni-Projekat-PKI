@@ -1,15 +1,44 @@
-
-/*Podesavanje search-bara*/
+/* Kontejner za pretragu */
 .search-bar {
+  display: flex; /* Elementi u liniji */
+  justify-content: center; /* Centriraj u sredini */
+  align-items: center; /* Vertikalno poravnanje */
+  gap: 10px; /* Razmak između elemenata */
+  margin: 20px 0; /* Razmak iznad i ispod */
+}
 
-    /* Unutrašnji razmak unutar inputa */
-    padding: 8px; 
-    /* Bez okvira */
-    border: none; 
-    /* Zaobljeni uglovi */
-    border-radius: 6px; 
-    margin: 30px  570px;
-    
-  
-  }
-  
+/* Input polje za pretragu */
+.search-bar input {
+  padding: 10px; /* Unutrašnji razmak */
+  font-size: 16px; /* Veličina fonta */
+  border: 1px solid #ccc; /* Svetlosiva ivica */
+  border-radius: 4px; /* Zaobljeni uglovi */
+  width: 200px; /* Širina inputa */
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Blaga senka */
+}
+
+/* Padajući meni */
+.search-bar select {
+  padding: 8px; /* Unutrašnji razmak */
+  font-size: 16px; /* Veličina fonta */
+  border: 1px solid #ccc; /* Svetlosiva ivica */
+  border-radius: 4px; /* Zaobljeni uglovi */
+  background-color: #fff; /* Bela pozadina */
+  width: 150px; /* Širina menija */
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Blaga senka */
+  cursor: pointer; /* Promena kursora */
+}
+
+/* Efekat pri prelasku miša */
+.search-bar input:hover,
+.search-bar select:hover {
+  border-color: #007bff; /* Plava ivica */
+}
+
+/* Fokusirani elementi */
+.search-bar input:focus,
+.search-bar select:focus {
+  outline: none; /* Uklanjanje standardnog fokusa */
+  border-color: #007bff; /* Plava ivica */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Plava senka */
+}

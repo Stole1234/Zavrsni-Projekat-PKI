@@ -13,6 +13,10 @@ export class MovieService {
       about: 'U ovoj neodoljivoj kombinaciji akcije i humora, Deadpool i Wolverine se suočavaju s novim neprijateljima i izazovima koji testiraju njihove granice. Kada misteriozna pretnja zapreti miru, ovaj nesvakidašnji dvojac se udružuje u borbi protiv zla. Deadpool, poznat po svom oštrom jeziku i sarkazmu, i Wolverine, koji je poznat po svojim sposobnostima regeneracije i borbenim veštinama, kombinuju svoje snage da pruže spektakularan spektakl pun uzbuđenja, smeha i akcije.',
       genre: 'Komedija, Akcija, Naučna fantastika',
       releaseDate: '2024-07-12',
+      projections: [
+        { date: '2024-11-25', time: '18:00', price: 500 },
+        { date: '2024-11-26', time: '20:30', price: 550 }
+      ]
     },
     {
       id: 2,
@@ -22,6 +26,10 @@ export class MovieService {
       about: 'Movie 2 ima zanimljiv zaplet.',
       genre: 'Akcija',
       releaseDate: '2023-11-15',
+      projections: [
+        { date: '2024-11-25', time: '19:00', price: 600 },
+        { date: '2024-11-27', time: '21:00', price: 650 }
+      ]
     },
     {
       id: 3,

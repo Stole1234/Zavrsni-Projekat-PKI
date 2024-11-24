@@ -13,25 +13,42 @@ export class CartComponent implements OnInit {
   constructor(private movieService: MovieService) {} 
 
   ngOnInit() {
-    const storedMovies = localStorage.getItem('reservedMovies');
-    if (storedMovies) {
-      const movieIds = JSON.parse(storedMovies);
-      this.reservedMovies = movieIds.map((id: number) => this.getMovieById(id)); 
+    const storedProjections = localStorage.getItem('reservedProjections');
+    if (storedProjections) {
+      this.reservedMovies = JSON.parse(storedProjections); 
     }
   }
-
+  
   getMovieById(id: number) {
     
     return this.movieService.getMovieById(id);
   }
 
-  removeMovie(movieId: number) {
-    this.reservedMovies = this.reservedMovies.filter(movie => movie.id !== movieId);
-    localStorage.setItem('reservedMovies', JSON.stringify(this.reservedMovies.map(m => m.id))); 
+  removeMovie(movie: any) {
+    this.reservedMovies = this.reservedMovies.filter(
+      (m) =>
+        m.movieTitle !== movie.movieTitle ||
+        m.date !== movie.date ||
+        m.time !== movie.time
+    );
+  
+    localStorage.setItem('reservedProjections', JSON.stringify(this.reservedMovies));
+    alert('Rezervacija je otkazana.');
   }
+  
 
   clearCart() {
     this.reservedMovies = [];
     localStorage.removeItem('reservedMovies');
   }
+
+  rateProjection(movie: any) {
+    const index = this.reservedMovies.findIndex((m) => m.id === movie.id);
+    if (index !== -1) {
+      this.reservedMovies[index].rating = movie.rating;
+      localStorage.setItem('reservedMovies', JSON.stringify(this.reservedMovies));
+    }
+  }
+  
+  
 }

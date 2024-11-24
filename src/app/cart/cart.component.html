@@ -1,7 +1,33 @@
-<div *ngFor="let movie of reservedMovies" class="movie-card">
-  <img [src]="movie.imageUrl" alt="{{ movie.title }}" class="movie-image">
-  <h2>{{ movie.title }}</h2>
-  <h3>{{ movie.genre }}</h3>
-  <p>{{ movie.description }}</p>
-  <button (click)="removeMovie(movie.id)">Poništi rezervaciju</button>
+<div class="cart-container">
+  <h2>Korpa</h2>
+  
+  <!-- Provera da li ima rezervacija -->
+  <div *ngIf="reservedMovies.length > 0; else emptyCart">
+    <!-- Petlja za prikaz rezervisanih filmova -->
+    <div class="reservation-card" *ngFor="let movie of reservedMovies">
+      <h3>{{ movie.title }}</h3>
+      <p><strong>Datum:</strong> {{ movie.date }}</p>
+      <p><strong>Vreme:</strong> {{ movie.time }}</p>
+      <p><strong>Cena:</strong> {{ movie.price }} RSD</p>
+      
+      <!-- Dugme za otkazivanje -->
+      <button class="remove-button" (click)="removeMovie(movie)">Otkazivanje rezervacije</button>
+
+      <!-- Ocenjivanje ako je film gledan -->
+      <div *ngIf="movie.status === 'gledana'" class="rating-container">
+        <label for="rating-{{ movie.id }}">Ocena:</label>
+        <select id="rating-{{ movie.id }}" [(ngModel)]="movie.rating" (change)="rateProjection(movie)">
+          <option *ngFor="let rating of [1, 2, 3, 4, 5]" [value]="rating">{{ rating }}</option>
+        </select>
+      </div>
+    </div>
+    
+    <!-- Dugme za čišćenje cele korpe -->
+    <button class="clear-cart" (click)="clearCart()">Očisti korpu</button>
+  </div>
+
+  <!-- Prikaz kada je korpa prazna -->
+  <ng-template #emptyCart>
+    <p class="empty-cart-message">Korpa je prazna. Dodajte projekcije za rezervaciju.</p>
+  </ng-template>
 </div>

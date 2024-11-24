@@ -33,18 +33,31 @@ export class MovieDetailComponent implements OnInit {
     this.showAbout = !this.showAbout;
   }
 
-  reserveMovie(movie: any) {
-    let reservedMovies = JSON.parse(localStorage.getItem('reservedMovies') || '[]');
+  reserveProjection(projection: any) {
+    let reservedProjections = JSON.parse(localStorage.getItem('reservedProjections') || '[]');
   
-    
-    const movieExists = reservedMovies.find((m: any) => m.title === movie.title);
-    if (!movieExists) {
-      reservedMovies.push(movie);  
+    const projectionExists = reservedProjections.some((p: any) =>
+      p.movieTitle === this.movie.title &&
+      p.date === projection.date &&
+      p.time === projection.time
+    );
+  
+    if (!projectionExists) {
+      reservedProjections.push({
+        movieTitle: this.movie.title,
+        date: projection.date,
+        time: projection.time,
+        price: projection.price,
+        status: 'rezervisana',
+        rating: null
+      });
+  
+      localStorage.setItem('reservedProjections', JSON.stringify(reservedProjections));
+      alert('Projekcija je uspešno rezervisana!');
+    } else {
+      alert('Ova projekcija je već rezervisana.');
     }
-  
-    localStorage.setItem('reservedMovies', JSON.stringify(reservedMovies));
   }
-  
   
   
 }
