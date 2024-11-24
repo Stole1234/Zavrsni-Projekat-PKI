@@ -9,12 +9,18 @@
       <p><strong>Datum:</strong> {{ movie.date }}</p>
       <p><strong>Vreme:</strong> {{ movie.time }}</p>
       <p><strong>Cena:</strong> {{ movie.price }} RSD</p>
+      <p><strong>Status:</strong> {{ movie.status }}</p>
       
+      <!-- Dugme za promenu statusa -->
+      <button (click)="toggleMovieStatus(movie)">
+        {{ movie.status === 'gledano' ? 'Postavi na ne gledano' : 'Postavi na gledano' }}
+      </button>
+
       <!-- Dugme za otkazivanje -->
       <button class="remove-button" (click)="removeMovie(movie)">Otkazivanje rezervacije</button>
 
       <!-- Ocenjivanje ako je film gledan -->
-      <div *ngIf="movie.status === 'gledana'" class="rating-container">
+      <div *ngIf="movie.status === 'gledano'" class="rating-container">
         <label for="rating-{{ movie.id }}">Ocena:</label>
         <select id="rating-{{ movie.id }}" [(ngModel)]="movie.rating" (change)="rateProjection(movie)">
           <option *ngFor="let rating of [1, 2, 3, 4, 5]" [value]="rating">{{ rating }}</option>
