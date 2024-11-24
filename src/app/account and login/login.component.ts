@@ -4,7 +4,9 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html' // Putanja do tvog HTML fajla
+  templateUrl: './login.component.html' ,
+  styleUrls: ['./login.component.css'] 
+
 })
 export class LoginComponent {
   username: string = '';
@@ -13,7 +15,7 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  login() {
+  onLogin() {
     if (this.authService.login(this.username, this.password)) {
       this.router.navigate(['/movies']); // Preusmeravanje na stranicu filmova
     } else {

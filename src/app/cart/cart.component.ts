@@ -24,13 +24,14 @@ export class CartComponent implements OnInit {
   }
 
   removeMovie(movie: any) {
-    // Ispravite uslov za filtriranje filma na osnovu jedinstvenog ID-a
+    // Filtriraj sve filmove osim onog sa prosleđenim ID-om
     this.reservedMovies = this.reservedMovies.filter(m => m.id !== movie.id);
     
-    // Ažurirajte localStorage sa novim nizom rezervacija
+    // Ažuriraj localStorage nakon izmene
     localStorage.setItem('reservedProjections', JSON.stringify(this.reservedMovies));
-    alert('Rezervacija je otkazana.');
+    alert('Rezervacija za film je otkazana.');
   }
+  
 
   clearCart() {
     // Čisti sve rezervacije iz korpe

@@ -12,6 +12,7 @@ import { MovieDetailComponent } from './movie/movie-detail/movie-detail.componen
 import { LoginComponent } from './account and login/login.component'; 
 import { RegisterComponent } from './account and login/register.component'; 
 import { CartComponent } from './cart/cart.component';
+import { ProfileComponent } from './profile/profile.component';
 
 // Definiše niz ruta (URL putanja) i komponente koje će biti prikazane kada korisnik pristupi određenoj ruti
 const routes: Routes = [
@@ -37,7 +38,10 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
 
   // Ruta za Korpu
-  { path: 'cart', component: CartComponent }
+  { path: 'cart', component: CartComponent },
+
+  //Ruta za Profil
+  { path: 'profile', component: ProfileComponent }
    
   ];
 

@@ -14,7 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CartModule } from './cart/cart.module'; 
 import { SearchBarComponent } from './search/search-bar.component'; 
-
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +25,7 @@ import { SearchBarComponent } from './search/search-bar.component';
     RegisterComponent,
     LoginComponent,
     SearchBarComponent,
+    ProfileComponent,
    
   ],
   imports: [
