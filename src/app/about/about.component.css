@@ -1,4 +1,4 @@
-/* Fleksibilni kontejner za centriranje elemenata */
+/* Fleksibilni kontejner*/
 .about-container {
   display: flex;
   flex-direction: column;
@@ -9,23 +9,23 @@
   padding: 20px;
 
   /* Pozadina i boje teksta */
-  background-color: #131212; /* Tamna pozadina */
-  color: #fdfafa; /* Svetla boja teksta */
+  background-color: #131212; 
+  color: #fdfafa; 
 }
 
-/* Stilizacija naslova "O nama" */
+/* naslov "O nama" */
 .about-container h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #ffffff; /* Boja naslova */
+  color: #ffffff; 
 }
 
-/* Stilizacija paragrafa */
+/* paragraf */
 .about-container p {
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 15px;
-  color: #ffffff; /* Boja teksta paragrafa */
+  color: #ffffff; 
 }
 
 /* Skidanje podrazumevanih stilova za listu */
@@ -34,9 +34,9 @@
   padding: 0;
 }
 
-/* Stilizacija stavki liste */
+/* Stilizovanje stavki liste */
 .about-container li {
   font-size: 1rem;
   margin: 5px 0;
-  color: #fdfafa; /* Svetla boja stavki liste */
+  color: #fdfafa; 
 }

@@ -1,11 +1,15 @@
 /* Kontejner za listu filmova */
 .movie-list-container {
     display: flex;
-    flex-wrap: wrap;  /* Omogućava prebacivanje filmova u novi red */
-    justify-content: space-between;  /* Razmak između filmova */
-    max-width: 1200px;  /* Ograničava širinu kontejnera da stane 4 filma u red */
-    margin: 0 auto;  /* Centriraj ceo kontejner */
-      /* Razmak između kartica */
+    /* Omogućava prebacivanje filmova u novi red */
+    flex-wrap: wrap;  
+    /* Razmak između filmova */
+    justify-content: space-between;
+    /* Ograničava širinu kontejnera da stane 4 filma u red */  
+    max-width: 1200px;
+    /* Centriranje celog kontejnera */  
+    margin: 0 auto;  
+     
 }
 
 /* Stilizovanje kartica filmova */
@@ -16,16 +20,17 @@
     border-radius: 8px;
     padding: 20px;
     margin: 10px;
-    width: 23%;  /* Postavi širinu da zauzme otprilike 1/4 širine */
-    box-sizing: border-box;  /* Ukljuci padding i margine */
-    text-align: center;  /* Centriranje sadržaja kartice */
+    width: 23%;  
+    box-sizing: border-box;  
+    /* Centriranje sadržaja kartice */
+    text-align: center;  
 }
 
 /* Stilizovanje slika filmova */
 .movie-card img {
-    width: 100%;  /* Slika zauzima punu širinu kartice */
+    width: 100%;  
     height: 250px;
-    object-fit: cover;  /* Održavanje proporcija slike */
+    object-fit: cover;  
     border-radius: 4px;
 }
 
