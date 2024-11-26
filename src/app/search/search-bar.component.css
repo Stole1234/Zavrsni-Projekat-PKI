@@ -1,44 +1,44 @@
 /* Kontejner za pretragu */
 .search-bar {
-  display: flex; /* Elementi u liniji */
-  justify-content: center; /* Centriraj u sredini */
-  align-items: center; /* Vertikalno poravnanje */
-  gap: 10px; /* Razmak između elemenata */
-  margin: 20px 0; /* Razmak iznad i ispod */
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 10px; 
+  margin: 20px 0; 
 }
 
 /* Input polje za pretragu */
 .search-bar input {
-  padding: 10px; /* Unutrašnji razmak */
-  font-size: 16px; /* Veličina fonta */
-  border: 1px solid #ccc; /* Svetlosiva ivica */
-  border-radius: 4px; /* Zaobljeni uglovi */
-  width: 200px; /* Širina inputa */
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Blaga senka */
+  padding: 10px; 
+  font-size: 16px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  width: 200px; 
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); 
 }
 
 /* Padajući meni */
 .search-bar select {
-  padding: 8px; /* Unutrašnji razmak */
-  font-size: 16px; /* Veličina fonta */
-  border: 1px solid #ccc; /* Svetlosiva ivica */
-  border-radius: 4px; /* Zaobljeni uglovi */
-  background-color: #fff; /* Bela pozadina */
-  width: 150px; /* Širina menija */
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Blaga senka */
-  cursor: pointer; /* Promena kursora */
+  padding: 8px; 
+  font-size: 16px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  background-color: #fff; 
+  width: 150px; 
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); 
+  cursor: pointer; 
 }
 
 /* Efekat pri prelasku miša */
 .search-bar input:hover,
 .search-bar select:hover {
-  border-color: #007bff; /* Plava ivica */
+  border-color: #007bff; 
 }
 
-/* Fokusirani elementi */
+/* Fokus elemenata */
 .search-bar input:focus,
 .search-bar select:focus {
-  outline: none; /* Uklanjanje standardnog fokusa */
-  border-color: #007bff; /* Plava ivica */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Plava senka */
+  outline: none; 
+  border-color: #007bff; 
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
 }

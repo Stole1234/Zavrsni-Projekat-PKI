@@ -44,7 +44,7 @@ export class MovieListComponent implements OnInit {
 
   
   addMovieToCart(movie: any) {
-    if (this.authService.isLoggedIn()) {  // Proverite da li je korisnik logovan
+    if (this.authService.isLoggedIn()) { 
       let reservedMovies = JSON.parse(localStorage.getItem('reservedMovies') || '[]');
       const existingMovie = reservedMovies.find((m: any) => m.title === movie.title);
 
@@ -55,7 +55,7 @@ export class MovieListComponent implements OnInit {
         alert('Film je već u tvojoj rezervaciji!');
       }
     } else {
-      alert('Moraš biti prijavljen da bi rezervisao film!');  // Obaveštenje umesto preusmeravanja
+      alert('Moraš biti prijavljen da bi rezervisao film!');  
     }
   }
   

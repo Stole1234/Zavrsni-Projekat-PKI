@@ -19,7 +19,7 @@
       <!-- Dugme za otkazivanje -->
       <button class="remove-button" (click)="removeMovie(movie)">Otkazivanje rezervacije</button>
 
-      <!-- Ocenjivanje ako je film gledan -->
+      <!-- Ocenjivanje filma kao je gledan -->
       <div *ngIf="movie.status === 'gledano'" class="rating-container">
         <label for="rating-{{ movie.id }}">Ocena:</label>
         <select id="rating-{{ movie.id }}" [(ngModel)]="movie.rating" (change)="rateProjection(movie)">
@@ -28,7 +28,7 @@
       </div>
     </div>
     
-    <!-- Dugme za čišćenje cele korpe -->
+    <!-- Dugme Ocisti korpu-->
     <button class="clear-cart" (click)="clearCart()">Očisti korpu</button>
   </div>
 

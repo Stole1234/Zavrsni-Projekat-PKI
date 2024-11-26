@@ -9,20 +9,20 @@ export class AuthService {
   private currentUser: any = null;
 
   constructor() {
-    // Inicijalizuj korisnike iz localStorage ako postoje
+    
     const storedUsers = localStorage.getItem('users');
     if (storedUsers) {
       this.users = JSON.parse(storedUsers);
     }
   }
 
-  // Login metoda koja prihvata username i password
+  // username i password
   login(username: string, password: string): boolean {
     const user = this.users.find(u => u.username === username && u.password === password);
     if (user) {
       this.loggedIn = true;
-      localStorage.setItem('loggedIn', 'true'); // Dodajte status prijave
-      this.currentUser = user.profile; // Sačuvajte profil
+      localStorage.setItem('loggedIn', 'true'); 
+      this.currentUser = user.profile; 
       return true;
     }
     return false;

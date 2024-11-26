@@ -12,13 +12,13 @@ export class ProfileComponent implements OnInit {
     email: '',
     phone: '',
     favoriteGenres: '',
-    password: '' // Dodato polje za lozinku
+    password: '' 
   };
 
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    // Učitaj trenutni profil korisnika
+    // Učitajavanje trenutnog profila korisnika
     const currentUser = this.authService.getCurrentUserProfile();
     if (currentUser) {
       this.userProfile = currentUser;
@@ -27,7 +27,7 @@ export class ProfileComponent implements OnInit {
 
   // Metoda za ažuriranje profila
   saveProfile() {
-    this.authService.updateUserProfile(this.userProfile); // Ažuriraj profil korisnika
+    this.authService.updateUserProfile(this.userProfile); 
     alert('Profil je ažuriran!');
   }
 }

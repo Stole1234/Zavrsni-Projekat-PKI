@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  @Input() aboutText: string = ''; // Ovaj input prima about tekst
+  @Input() aboutText: string = ''; 
 }

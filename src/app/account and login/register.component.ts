@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from './auth.service'; // Importujte AuthService
+import { AuthService } from './auth.service'; 
 
 @Component({
   selector: 'app-register',
@@ -18,7 +18,7 @@ export class RegisterComponent {
 
   // Metoda koja se poziva pri registraciji
   register() {
-    // Kreirajte profil sa podacima
+    // Kreiranje profila sa podacima
     const profile = {
       fullName: this.fullName,
       email: this.email,

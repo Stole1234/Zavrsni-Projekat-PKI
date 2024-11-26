@@ -1,14 +1,13 @@
-// src/app/cart/cart.module.ts
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Dodajte ovo!
+import { FormsModule } from '@angular/forms'; 
 import { CartComponent } from './cart.component';
 
 @NgModule({
   declarations: [CartComponent],
   imports: [
     CommonModule,
-    FormsModule // Dodajte FormsModule ovde!
+    FormsModule 
   ],
   exports: [CartComponent]
 })

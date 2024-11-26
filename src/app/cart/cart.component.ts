@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
   constructor(private movieService: MovieService) {}
 
   ngOnInit() {
-    // Ispravite ključ sa kojim pretrazujete localStorage
+    
     const storedProjections = localStorage.getItem('reservedProjections');
     if (storedProjections) {
       this.reservedMovies = JSON.parse(storedProjections);
@@ -24,10 +24,10 @@ export class CartComponent implements OnInit {
   }
 
   removeMovie(movie: any) {
-    // Filtriraj sve filmove osim onog sa prosleđenim ID-om
+    
     this.reservedMovies = this.reservedMovies.filter(m => m.id !== movie.id);
     
-    // Ažuriraj localStorage nakon izmene
+    
     localStorage.setItem('reservedProjections', JSON.stringify(this.reservedMovies));
     alert('Rezervacija za film je otkazana.');
   }
@@ -48,7 +48,7 @@ export class CartComponent implements OnInit {
   }
 
   toggleMovieStatus(movie: any): void {
-    // Promeni status filma
+    // Promena statusa filma
     movie.status = movie.status === 'gledano' ? 'ne gledano' : 'gledano';
     localStorage.setItem('reservedProjections', JSON.stringify(this.reservedMovies));
   }

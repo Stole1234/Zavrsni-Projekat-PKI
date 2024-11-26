@@ -11,15 +11,14 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   username: string = '';
   password: string = '';
-  errorMessage: string = ''; // Dodajemo varijablu za greške
-
+  errorMessage: string = ''; 
   constructor(private authService: AuthService, private router: Router) {}
 
   onLogin() {
     if (this.authService.login(this.username, this.password)) {
-      this.router.navigate(['/movies']); // Preusmeravanje na stranicu filmova
+      this.router.navigate(['/movies']); 
     } else {
-      this.errorMessage = 'Pogrešno korisničko ime ili lozinka'; // Postavljanje poruke o grešci
+      this.errorMessage = 'Pogrešno korisničko ime ili lozinka'; 
     }
   }
 }
