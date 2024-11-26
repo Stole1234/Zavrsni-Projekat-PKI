@@ -10,7 +10,7 @@ export class SearchBarComponent {
     title: '',
      genre: '',
     releaseYear: ''
-  } // Kriterijum pretrage
+  } 
 
  
   @Output() search: EventEmitter<any> = new EventEmitter<any>();

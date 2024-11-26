@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipe implements PipeTransform {
   transform(movies: any[], searchTerm: string): any[] {
     if (!movies || !searchTerm) {
-      return movies; // Ako nema filmova ili nije unet termin, vraca sve filmove
+      return movies; 
     }
 
     return movies.filter(movie => 
